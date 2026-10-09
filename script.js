@@ -10,14 +10,15 @@ const weddingConfig = {
   venueName: "Family Park",
   venueAddress: "Family Park - Gate 3 - El-Rehab",
   googleMapsUrl: "https://maps.app.goo.gl/wuj5d2P1hxW4KHtNA",
-  publicUrl: "",
+  publicUrl: "https://hussamhamdy.github.io/Wedding/",
 
   whatsappNumber: "201025825046",
 
   dressCode: "Formal / Elegant",
   showDressCode: true,
-  enableMusic: false,
+  enableMusic: true,
   musicFile: "assets/music/FlyMe.mp3",
+  musicStartAtSeconds: 10,
 
   gallery: [
     {
@@ -288,11 +289,25 @@ function setupMusic() {
   if (!weddingConfig.enableMusic || !weddingConfig.musicFile) return;
 
   audio.src = weddingConfig.musicFile;
+  audio.preload = "auto";
   button.hidden = false;
+
+  audio.addEventListener(
+    "loadedmetadata",
+    () => {
+      if (Number.isFinite(weddingConfig.musicStartAtSeconds)) {
+        audio.currentTime = Math.min(weddingConfig.musicStartAtSeconds, Math.max(audio.duration - 1, 0));
+      }
+    },
+    { once: true }
+  );
 
   button.addEventListener("click", async () => {
     try {
       if (audio.paused) {
+        if (audio.currentTime < weddingConfig.musicStartAtSeconds) {
+          audio.currentTime = weddingConfig.musicStartAtSeconds;
+        }
         await audio.play();
       } else {
         audio.pause();
@@ -302,6 +317,20 @@ function setupMusic() {
       console.info("Music could not start until the browser allows playback.", error);
     }
   });
+
+  window.addEventListener(
+    "load",
+    async () => {
+      try {
+        audio.currentTime = weddingConfig.musicStartAtSeconds;
+        await audio.play();
+        updateMusicLabel();
+      } catch (error) {
+        console.info("Autoplay was blocked by the browser. Guests can tap the music button.", error);
+      }
+    },
+    { once: true }
+  );
 }
 
 function updateMusicLabel() {
