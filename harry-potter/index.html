@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hussam & Bride Name | Wedding Invitation</title>
+    <meta
+      name="description"
+      content="Together with their families, Hussam and Bride Name invite you to celebrate their wedding."
+    />
+    <link rel="canonical" href="https://hussamhamdy.github.io/Wedding/harry-potter/" />
+    <meta name="theme-color" content="#15110d" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hussam & Bride Name | Wedding Invitation" />
+    <meta
+      property="og:description"
+      content="Together with their families, Hussam and Bride Name invite you to celebrate their wedding."
+    />
+    <meta property="og:image" content="assets/images/share-preview.jpg" />
+    <meta property="og:url" content="https://hussamhamdy.github.io/Wedding/harry-potter/" />
+
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.svg" />
+    <link rel="preload" as="image" href="assets/images/hero-placeholder.jpg" />
+    <link rel="stylesheet" href="style.css?v=20261009-3" />
+  </head>
+  <body>
+    <a class="skip-link" href="#invitation">Skip to invitation</a>
+
+    <header class="topbar" aria-label="Wedding invitation controls">
+      <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">
+        <span data-label="language-current">EN</span>
+      </button>
+      <button class="music-toggle" id="musicToggle" type="button" aria-label="Toggle music" hidden>
+        <span class="music-icon" aria-hidden="true">♪</span>
+        <span data-i18n="musicOff">Music</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero section-panel" id="home" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-inner reveal">
+          <p class="eyebrow" data-i18n="heroEyebrow">Wedding Invitation</p>
+          <svg class="hallow-mark" viewBox="0 0 120 120" aria-hidden="true">
+            <path d="M60 8 108 100H12Z" />
+            <circle cx="60" cy="69" r="28" />
+            <path d="M60 8v92" />
+          </svg>
+          <h1 class="couple-names" id="hero-title">
+            <span data-config="groomName">Hussam</span>
+            <span class="ampersand">&amp;</span>
+            <span data-config="brideName">Bride Name</span>
+          </h1>
+          <p class="hero-date" data-config="displayDate">Saturday, November 21, 2026</p>
+          <p class="hero-copy" data-i18n="heroCopy">
+            Together with our families, we invite you to celebrate our wedding.
+          </p>
+        </div>
+        <a class="scroll-indicator" href="#invitation" aria-label="Scroll to invitation">
+          <span></span>
+        </a>
+      </section>
+
+      <section class="invitation section-panel" id="invitation" aria-labelledby="invitation-title">
+        <div class="ornament" aria-hidden="true"></div>
+        <div class="content-narrow reveal">
+          <p class="eyebrow" data-i18n="invitationEyebrow">With love and joy</p>
+          <h2 id="invitation-title" data-i18n="invitationTitle">You are warmly invited</h2>
+          <p class="invitation-text" data-i18n="invitationMessage">
+            We would be honored to have you with us as we begin this new chapter and celebrate an evening full of love, family, and beautiful memories.
+          </p>
+        </div>
+      </section>
+
+      <section class="countdown section-panel" aria-labelledby="countdown-title">
+        <div class="content-wide reveal">
+          <p class="eyebrow" data-i18n="countdownEyebrow">Counting down</p>
+          <h2 id="countdown-title" data-i18n="countdownTitle">Until we celebrate</h2>
+          <div class="countdown-grid" id="countdownGrid" role="timer" aria-live="polite">
+            <div class="countdown-item">
+              <strong data-countdown="days">00</strong>
+              <span data-i18n="days">Days</span>
+            </div>
+            <div class="countdown-item">
+              <strong data-countdown="hours">00</strong>
+              <span data-i18n="hours">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <strong data-countdown="minutes">00</strong>
+              <span data-i18n="minutes">Minutes</span>
+            </div>
+            <div class="countdown-item">
+              <strong data-countdown="seconds">00</strong>
+              <span data-i18n="seconds">Seconds</span>
+            </div>
+          </div>
+          <p class="passed-message" id="passedMessage" data-i18n="passedMessage" hidden>
+            Our wedding day has arrived. Thank you for celebrating with us.
+          </p>
+        </div>
+      </section>
+
+      <section class="details section-panel" aria-labelledby="details-title">
+        <div class="content-wide details-layout reveal">
+          <div>
+            <p class="eyebrow" data-i18n="detailsEyebrow">Wedding details</p>
+            <h2 id="details-title" data-i18n="detailsTitle">The celebration</h2>
+          </div>
+          <div class="detail-list">
+            <article class="detail-block">
+              <span data-i18n="dateLabel">Date</span>
+              <strong data-config="detailDate">Saturday, November 21, 2026</strong>
+            </article>
+            <article class="detail-block">
+              <span data-i18n="timeLabel">Time</span>
+              <strong data-config="detailTime">7:00 PM - 11:59 PM</strong>
+            </article>
+            <article class="detail-block">
+              <span data-i18n="venueLabel">Venue</span>
+              <strong data-config="venueName">Venue Name</strong>
+              <em data-config="venueAddress">Venue Address</em>
+            </article>
+          </div>
+          <div class="action-row">
+            <a class="button primary" id="locationButton" href="#" target="_blank" rel="noopener">
+              <span data-i18n="openLocation">Open Location</span>
+            </a>
+            <button class="button secondary" id="calendarButton" type="button">
+              <span data-i18n="addCalendar">Add to Calendar</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="dress section-panel" id="dressCodeSection" aria-labelledby="dress-title">
+        <div class="content-narrow reveal">
+          <p class="eyebrow" data-i18n="dressEyebrow">Dress code</p>
+          <h2 id="dress-title" data-config="dressCodeTitle">Formal / Elegant</h2>
+          <p data-i18n="dressNote">A refined evening look is warmly appreciated.</p>
+        </div>
+      </section>
+
+      <section class="rsvp section-panel" aria-labelledby="rsvp-title">
+        <div class="content-narrow reveal">
+          <p class="eyebrow" data-i18n="rsvpEyebrow">RSVP</p>
+          <h2 id="rsvp-title" data-i18n="rsvpTitle">Will you celebrate with us?</h2>
+          <p data-i18n="rsvpCopy">
+            Please confirm your attendance through WhatsApp so we can prepare a beautiful evening for you.
+          </p>
+          <a class="button primary rsvp-button" id="rsvpButton" href="#" target="_blank" rel="noopener">
+            <span data-i18n="confirmAttendance">Confirm Attendance</span>
+          </a>
+          <button class="button secondary share-button" id="shareButton" type="button">
+            <span data-i18n="shareInvitation">Share Invitation</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p data-i18n="footerMessage">We can't wait to celebrate with you.</p>
+      <strong>
+        <span data-config="groomName">Hussam</span>
+        <span>&amp;</span>
+        <span data-config="brideName">Bride Name</span>
+      </strong>
+      <span data-config="shortDate">21 Nov 2026</span>
+    </footer>
+
+    <audio id="backgroundMusic" preload="auto" loop></audio>
+    <script src="script.js?v=20261009-6"></script>
+  </body>
+</html>

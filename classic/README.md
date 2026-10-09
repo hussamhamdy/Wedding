@@ -2,21 +2,6 @@
 
 A polished, mobile-first static wedding invitation built with HTML, CSS, and vanilla JavaScript. It is designed to work well on GitHub Pages and to be easy to edit later.
 
-## Theme Links
-
-This repo now publishes two invitation themes from separate folders:
-
-```text
-https://hussamhamdy.github.io/Wedding/classic/
-https://hussamhamdy.github.io/Wedding/harry-potter/
-```
-
-The root page is a theme chooser:
-
-```text
-https://hussamhamdy.github.io/Wedding/
-```
-
 ## Preview Locally
 
 Open `index.html` directly in your browser, or run a simple local server from this folder:

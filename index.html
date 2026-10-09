@@ -1,175 +1,185 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hussam & Bride Name | Wedding Invitation</title>
+    <title>Hussam & Nagah | Wedding Invitation Themes</title>
     <meta
       name="description"
-      content="Together with their families, Hussam and Bride Name invite you to celebrate their wedding."
+      content="Choose between the classic and magical wedding invitation themes for Hussam and Nagah."
     />
-    <link rel="canonical" href="https://USERNAME.github.io/REPOSITORY/" />
+    <link rel="canonical" href="https://hussamhamdy.github.io/Wedding/" />
     <meta name="theme-color" content="#15110d" />
-
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Hussam & Bride Name | Wedding Invitation" />
+    <meta property="og:title" content="Hussam & Nagah | Wedding Invitation" />
     <meta
       property="og:description"
-      content="Together with their families, Hussam and Bride Name invite you to celebrate their wedding."
+      content="Choose between the classic and magical wedding invitation themes."
     />
-    <meta property="og:image" content="assets/images/share-preview.jpg" />
-    <meta property="og:url" content="https://USERNAME.github.io/REPOSITORY/" />
+    <meta property="og:image" content="harry-potter/assets/images/share-preview.jpg" />
+    <meta property="og:url" content="https://hussamhamdy.github.io/Wedding/" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --gold: #f0d89a;
+        --gold-soft: #caa45d;
+        --paper: #f8efd9;
+      }
 
-    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.svg" />
-    <link rel="preload" as="image" href="assets/images/hero-placeholder.jpg" />
-    <link rel="stylesheet" href="style.css?v=20261009-3" />
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100svh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 1.25rem;
+        background:
+          radial-gradient(circle at 20% 10%, rgba(202, 164, 93, 0.22), transparent 28rem),
+          radial-gradient(circle at 80% 80%, rgba(31, 76, 60, 0.24), transparent 26rem),
+          linear-gradient(135deg, #0e1218, #15110d 56%, #2b1118);
+        color: var(--paper);
+        font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      }
+
+      main {
+        width: min(100%, 54rem);
+        text-align: center;
+      }
+
+      .sigil {
+        width: 5.5rem;
+        margin: 0 auto 1.3rem;
+        color: var(--gold);
+        filter: drop-shadow(0 0 18px rgba(240, 216, 154, 0.34));
+      }
+
+      .sigil path,
+      .sigil circle {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .eyebrow {
+        color: var(--gold-soft);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0.7rem 0 0.9rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 12vw, 6.5rem);
+        font-weight: 400;
+        line-height: 0.95;
+      }
+
+      .intro {
+        width: min(100%, 34rem);
+        margin: 0 auto;
+        color: #deceb0;
+        font-size: 1.08rem;
+        line-height: 1.7;
+      }
+
+      .theme-grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 2.2rem;
+      }
+
+      .theme-link {
+        min-height: 10rem;
+        display: grid;
+        align-content: center;
+        gap: 0.5rem;
+        border: 1px solid rgba(240, 216, 154, 0.28);
+        padding: 1.5rem;
+        color: inherit;
+        text-decoration: none;
+        background: rgba(248, 239, 217, 0.07);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      .theme-link:hover,
+      .theme-link:focus-visible {
+        transform: translateY(-3px);
+        border-color: rgba(240, 216, 154, 0.72);
+        background: rgba(248, 239, 217, 0.11);
+      }
+
+      .theme-link strong {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.8rem, 6vw, 3rem);
+        font-weight: 400;
+      }
+
+      .theme-link span {
+        color: #d9c491;
+      }
+
+      .classic {
+        background:
+          linear-gradient(135deg, rgba(248, 239, 217, 0.16), rgba(202, 164, 93, 0.08)),
+          rgba(248, 239, 217, 0.07);
+      }
+
+      .magical {
+        background:
+          linear-gradient(135deg, rgba(59, 24, 32, 0.34), rgba(31, 76, 60, 0.22)),
+          rgba(248, 239, 217, 0.07);
+      }
+
+      footer {
+        margin-top: 2rem;
+        color: #bca778;
+        font-size: 0.92rem;
+      }
+
+      @media (min-width: 720px) {
+        .theme-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
   </head>
   <body>
-    <a class="skip-link" href="#invitation">Skip to invitation</a>
-
-    <header class="topbar" aria-label="Wedding invitation controls">
-      <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">
-        <span data-label="language-current">EN</span>
-      </button>
-      <button class="music-toggle" id="musicToggle" type="button" aria-label="Toggle music" hidden>
-        <span class="music-icon" aria-hidden="true">♪</span>
-        <span data-i18n="musicOff">Music</span>
-      </button>
-    </header>
-
     <main>
-      <section class="hero section-panel" id="home" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true"></div>
-        <div class="hero-inner reveal">
-          <p class="eyebrow" data-i18n="heroEyebrow">Wedding Invitation</p>
-          <svg class="hallow-mark" viewBox="0 0 120 120" aria-hidden="true">
-            <path d="M60 8 108 100H12Z" />
-            <circle cx="60" cy="69" r="28" />
-            <path d="M60 8v92" />
-          </svg>
-          <h1 class="couple-names" id="hero-title">
-            <span data-config="groomName">Hussam</span>
-            <span class="ampersand">&amp;</span>
-            <span data-config="brideName">Bride Name</span>
-          </h1>
-          <p class="hero-date" data-config="displayDate">Saturday, November 21, 2026</p>
-          <p class="hero-copy" data-i18n="heroCopy">
-            Together with our families, we invite you to celebrate our wedding.
-          </p>
-        </div>
-        <a class="scroll-indicator" href="#invitation" aria-label="Scroll to invitation">
-          <span></span>
+      <svg class="sigil" viewBox="0 0 120 120" aria-hidden="true">
+        <path d="M60 8 108 100H12Z" />
+        <circle cx="60" cy="69" r="28" />
+        <path d="M60 8v92" />
+      </svg>
+      <p class="eyebrow">Wedding Invitation</p>
+      <h1>Hussam & Nagah</h1>
+      <p class="intro">
+        Choose the invitation style you would like to open. Both links are ready to share with guests.
+      </p>
+
+      <div class="theme-grid" aria-label="Invitation theme links">
+        <a class="theme-link classic" href="classic/index.html">
+          <strong>Classic</strong>
+          <span>Elegant ivory and champagne invitation</span>
         </a>
-      </section>
+        <a class="theme-link magical" href="harry-potter/index.html">
+          <strong>Magical</strong>
+          <span>Deathly Hallows-inspired invitation</span>
+        </a>
+      </div>
 
-      <section class="invitation section-panel" id="invitation" aria-labelledby="invitation-title">
-        <div class="ornament" aria-hidden="true"></div>
-        <div class="content-narrow reveal">
-          <p class="eyebrow" data-i18n="invitationEyebrow">With love and joy</p>
-          <h2 id="invitation-title" data-i18n="invitationTitle">You are warmly invited</h2>
-          <p class="invitation-text" data-i18n="invitationMessage">
-            We would be honored to have you with us as we begin this new chapter and celebrate an evening full of love, family, and beautiful memories.
-          </p>
-        </div>
-      </section>
-
-      <section class="countdown section-panel" aria-labelledby="countdown-title">
-        <div class="content-wide reveal">
-          <p class="eyebrow" data-i18n="countdownEyebrow">Counting down</p>
-          <h2 id="countdown-title" data-i18n="countdownTitle">Until we celebrate</h2>
-          <div class="countdown-grid" id="countdownGrid" role="timer" aria-live="polite">
-            <div class="countdown-item">
-              <strong data-countdown="days">00</strong>
-              <span data-i18n="days">Days</span>
-            </div>
-            <div class="countdown-item">
-              <strong data-countdown="hours">00</strong>
-              <span data-i18n="hours">Hours</span>
-            </div>
-            <div class="countdown-item">
-              <strong data-countdown="minutes">00</strong>
-              <span data-i18n="minutes">Minutes</span>
-            </div>
-            <div class="countdown-item">
-              <strong data-countdown="seconds">00</strong>
-              <span data-i18n="seconds">Seconds</span>
-            </div>
-          </div>
-          <p class="passed-message" id="passedMessage" data-i18n="passedMessage" hidden>
-            Our wedding day has arrived. Thank you for celebrating with us.
-          </p>
-        </div>
-      </section>
-
-      <section class="details section-panel" aria-labelledby="details-title">
-        <div class="content-wide details-layout reveal">
-          <div>
-            <p class="eyebrow" data-i18n="detailsEyebrow">Wedding details</p>
-            <h2 id="details-title" data-i18n="detailsTitle">The celebration</h2>
-          </div>
-          <div class="detail-list">
-            <article class="detail-block">
-              <span data-i18n="dateLabel">Date</span>
-              <strong data-config="detailDate">Saturday, November 21, 2026</strong>
-            </article>
-            <article class="detail-block">
-              <span data-i18n="timeLabel">Time</span>
-              <strong data-config="detailTime">7:00 PM - 11:59 PM</strong>
-            </article>
-            <article class="detail-block">
-              <span data-i18n="venueLabel">Venue</span>
-              <strong data-config="venueName">Venue Name</strong>
-              <em data-config="venueAddress">Venue Address</em>
-            </article>
-          </div>
-          <div class="action-row">
-            <a class="button primary" id="locationButton" href="#" target="_blank" rel="noopener">
-              <span data-i18n="openLocation">Open Location</span>
-            </a>
-            <button class="button secondary" id="calendarButton" type="button">
-              <span data-i18n="addCalendar">Add to Calendar</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section class="dress section-panel" id="dressCodeSection" aria-labelledby="dress-title">
-        <div class="content-narrow reveal">
-          <p class="eyebrow" data-i18n="dressEyebrow">Dress code</p>
-          <h2 id="dress-title" data-config="dressCodeTitle">Formal / Elegant</h2>
-          <p data-i18n="dressNote">A refined evening look is warmly appreciated.</p>
-        </div>
-      </section>
-
-      <section class="rsvp section-panel" aria-labelledby="rsvp-title">
-        <div class="content-narrow reveal">
-          <p class="eyebrow" data-i18n="rsvpEyebrow">RSVP</p>
-          <h2 id="rsvp-title" data-i18n="rsvpTitle">Will you celebrate with us?</h2>
-          <p data-i18n="rsvpCopy">
-            Please confirm your attendance through WhatsApp so we can prepare a beautiful evening for you.
-          </p>
-          <a class="button primary rsvp-button" id="rsvpButton" href="#" target="_blank" rel="noopener">
-            <span data-i18n="confirmAttendance">Confirm Attendance</span>
-          </a>
-          <button class="button secondary share-button" id="shareButton" type="button">
-            <span data-i18n="shareInvitation">Share Invitation</span>
-          </button>
-        </div>
-      </section>
+      <footer>Friday, November 20, 2026</footer>
     </main>
-
-    <footer class="footer">
-      <p data-i18n="footerMessage">We can't wait to celebrate with you.</p>
-      <strong>
-        <span data-config="groomName">Hussam</span>
-        <span>&amp;</span>
-        <span data-config="brideName">Bride Name</span>
-      </strong>
-      <span data-config="shortDate">21 Nov 2026</span>
-    </footer>
-
-    <audio id="backgroundMusic" preload="auto" loop></audio>
-    <script src="script.js?v=20261009-3"></script>
   </body>
 </html>
