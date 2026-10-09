@@ -4,7 +4,7 @@ const weddingConfig = {
   brideName: "Nagah",
 
   weddingDate: "2026-11-20T17:00:00+02:00",
-  weddingEnd: "2026-11-20T19:59:00+02:00",
+  weddingEnd: "2026-11-20T19:00:00+02:00",
   timeZone: "Africa/Cairo",
 
   venueName: "Family Park",
@@ -18,22 +18,7 @@ const weddingConfig = {
   showDressCode: true,
   enableMusic: true,
   musicFile: "assets/music/FlyMe.mp3",
-  musicStartAtSeconds: 10,
-
-  gallery: [
-    {
-      src: "assets/images/photo1.jpg",
-      alt: "Elegant wedding detail placeholder"
-    },
-    {
-      src: "assets/images/photo2.jpg",
-      alt: "Romantic floral wedding placeholder"
-    },
-    {
-      src: "assets/images/photo3.jpg",
-      alt: "Soft wedding celebration placeholder"
-    }
-  ]
+  musicStartAtSeconds: 10
 };
 
 const translations = {
@@ -61,8 +46,6 @@ const translations = {
     venueLabel: "Venue",
     openLocation: "Open Location",
     addCalendar: "Add to Calendar",
-    galleryEyebrow: "A little glimpse",
-    galleryTitle: "Our moments",
     dressEyebrow: "Dress code",
     dressNote: "A refined evening look is warmly appreciated.",
     rsvpEyebrow: "RSVP",
@@ -103,8 +86,6 @@ const translations = {
     venueLabel: "المكان",
     openLocation: "فتح الموقع",
     addCalendar: "إضافة للتقويم",
-    galleryEyebrow: "لمحة بسيطة",
-    galleryTitle: "لحظاتنا",
     dressEyebrow: "الملابس",
     dressNote: "إطلالة رسمية وأنيقة تسعدنا.",
     rsvpEyebrow: "تأكيد الحضور",
@@ -130,7 +111,6 @@ const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
 document.addEventListener("DOMContentLoaded", () => {
   applyConfiguration();
-  buildGallery();
   setupActions();
   setupMusic();
   setupReveals();
@@ -214,25 +194,6 @@ function updateDateText() {
   $('[data-config="detailDate"]').textContent = dateText;
   $('[data-config="detailTime"]').textContent = `${timeFormatter.format(start)} - ${timeFormatter.format(end)}`;
   $('[data-config="shortDate"]').textContent = shortDate;
-}
-
-function buildGallery() {
-  const gallery = $("#galleryGrid");
-  gallery.innerHTML = "";
-
-  weddingConfig.gallery.forEach((photo, index) => {
-    const frame = document.createElement("figure");
-    frame.className = "gallery-frame";
-
-    const image = document.createElement("img");
-    image.src = photo.src;
-    image.alt = photo.alt || "";
-    image.loading = index === 0 ? "eager" : "lazy";
-    image.decoding = "async";
-
-    frame.append(image);
-    gallery.append(frame);
-  });
 }
 
 function setupActions() {

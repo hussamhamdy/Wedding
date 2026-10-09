@@ -42,7 +42,6 @@ Update these first:
 - `googleMapsUrl`
 - `whatsappNumber`
 - `dressCode`
-- `gallery`
 - `publicUrl`
 
 Use ISO date strings with the Egypt offset, for example:
@@ -59,11 +58,8 @@ Put your images in:
 assets/images/
 ```
 
-Then update the `gallery` array in `script.js`.
-
 Recommended sizes:
 
-- Gallery photos: around `1600px` wide, compressed JPG or WebP.
 - WhatsApp/Open Graph preview: `assets/images/share-preview.jpg`, ideally `1200 x 630px`.
 - Hero photo: replace `assets/images/hero-placeholder.jpg` with a real photo or invitation-style image.
 
