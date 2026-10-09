@@ -17,7 +17,7 @@ const weddingConfig = {
   dressCode: "Formal / Elegant",
   showDressCode: true,
   enableMusic: true,
-  musicFile: "assets/music/FlyMe.mp3",
+  musicFile: "assets/music/hedwig-theme.mp3",
   musicStartAtSeconds: 90
 };
 
@@ -253,12 +253,33 @@ function setupMusic() {
   audio.preload = "auto";
   button.hidden = false;
 
+  const haveMetadata = 1;
+  const getSafeStartTime = () => {
+    const requestedStart = Number(weddingConfig.musicStartAtSeconds) || 0;
+    if (!Number.isFinite(audio.duration) || audio.duration <= 0) return requestedStart;
+    return Math.min(requestedStart, Math.max(audio.duration - 1, 0));
+  };
+
+  const seekToStart = () => {
+    audio.currentTime = getSafeStartTime();
+  };
+
+  const ensureMetadata = () =>
+    new Promise((resolve, reject) => {
+      if (audio.readyState >= haveMetadata) {
+        resolve();
+        return;
+      }
+
+      audio.addEventListener("loadedmetadata", resolve, { once: true });
+      audio.addEventListener("error", reject, { once: true });
+      audio.load();
+    });
+
   audio.addEventListener(
     "loadedmetadata",
     () => {
-      if (Number.isFinite(weddingConfig.musicStartAtSeconds)) {
-        audio.currentTime = Math.min(weddingConfig.musicStartAtSeconds, Math.max(audio.duration - 1, 0));
-      }
+      seekToStart();
     },
     { once: true }
   );
@@ -266,9 +287,8 @@ function setupMusic() {
   button.addEventListener("click", async () => {
     try {
       if (audio.paused) {
-        if (audio.currentTime < weddingConfig.musicStartAtSeconds) {
-          audio.currentTime = weddingConfig.musicStartAtSeconds;
-        }
+        await ensureMetadata();
+        seekToStart();
         await audio.play();
       } else {
         audio.pause();
@@ -283,7 +303,8 @@ function setupMusic() {
     "load",
     async () => {
       try {
-        audio.currentTime = weddingConfig.musicStartAtSeconds;
+        await ensureMetadata();
+        seekToStart();
         await audio.play();
         updateMusicLabel();
       } catch (error) {
