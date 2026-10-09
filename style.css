@@ -1,14 +1,16 @@
 :root {
-  --ivory: #fbf7ef;
-  --warm: #f3eadc;
-  --champagne: #b9965f;
-  --champagne-soft: #dcc79d;
-  --charcoal: #23211f;
-  --ink-soft: #615a51;
-  --sage: #8d9a81;
-  --rose: #d9b6aa;
-  --line: rgba(74, 61, 44, 0.18);
-  --shadow: 0 20px 60px rgba(39, 31, 24, 0.12);
+  --ivory: #f7edd8;
+  --warm: #ead9b8;
+  --champagne: #caa45d;
+  --champagne-soft: #f0d89a;
+  --charcoal: #16110d;
+  --ink-soft: #6f6049;
+  --sage: #1f4c3c;
+  --rose: #7a2433;
+  --midnight: #0e1218;
+  --ember: #a0522d;
+  --line: rgba(202, 164, 93, 0.28);
+  --shadow: 0 24px 70px rgba(11, 8, 6, 0.22);
   --serif: Georgia, "Times New Roman", serif;
   --sans: "Segoe UI", Tahoma, Arial, sans-serif;
   --arabic: Tahoma, "Segoe UI", Arial, sans-serif;
@@ -30,12 +32,27 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 18% 0%, rgba(217, 182, 170, 0.26), transparent 34rem),
-    linear-gradient(180deg, var(--ivory), #fffaf4 44%, var(--warm));
+    radial-gradient(circle at 20% 8%, rgba(202, 164, 93, 0.22), transparent 28rem),
+    radial-gradient(circle at 82% 16%, rgba(31, 76, 60, 0.2), transparent 26rem),
+    linear-gradient(180deg, #120d0b, var(--midnight) 34rem, var(--ivory) 34rem, #f3e6ca 100%);
   color: var(--charcoal);
   font-family: var(--sans);
   line-height: 1.7;
   text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(240, 216, 154, 0.9) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.45) 0 1px, transparent 1.5px);
+  background-position: 0 0, 38px 54px;
+  background-size: 96px 96px, 132px 132px;
+  opacity: 0.2;
 }
 
 body[dir="rtl"] {
@@ -67,7 +84,7 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(185, 150, 95, 0.55);
+  outline: 3px solid rgba(240, 216, 154, 0.72);
   outline-offset: 4px;
 }
 
@@ -103,11 +120,11 @@ a {
   pointer-events: auto;
   min-width: 48px;
   min-height: 48px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(240, 216, 154, 0.36);
   border-radius: 999px;
-  background: rgba(251, 247, 239, 0.78);
-  color: var(--charcoal);
-  box-shadow: 0 10px 30px rgba(39, 31, 24, 0.1);
+  background: rgba(17, 13, 10, 0.66);
+  color: var(--champagne-soft);
+  box-shadow: 0 10px 30px rgba(3, 2, 1, 0.3);
   backdrop-filter: blur(16px);
   cursor: pointer;
 }
@@ -149,13 +166,23 @@ a {
   place-items: center;
   text-align: center;
   isolation: isolate;
+  color: #f9edd5;
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 1rem;
-  border: 1px solid rgba(185, 150, 95, 0.34);
+  border: 1px solid rgba(240, 216, 154, 0.28);
+  box-shadow: inset 0 0 80px rgba(202, 164, 93, 0.09);
+  pointer-events: none;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 1.6rem;
+  border: 1px solid rgba(31, 76, 60, 0.36);
   pointer-events: none;
 }
 
@@ -164,7 +191,10 @@ a {
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(180deg, rgba(251, 247, 239, 0.72), rgba(251, 247, 239, 0.94)),
+    radial-gradient(circle at 50% 35%, rgba(202, 164, 93, 0.22), transparent 20rem),
+    radial-gradient(circle at 24% 16%, rgba(122, 36, 51, 0.42), transparent 24rem),
+    radial-gradient(circle at 82% 76%, rgba(31, 76, 60, 0.36), transparent 28rem),
+    linear-gradient(180deg, rgba(10, 8, 7, 0.78), rgba(14, 18, 24, 0.94)),
     url("assets/images/hero-placeholder.jpg");
   background-position: center;
   background-size: cover;
@@ -176,8 +206,8 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(251, 247, 239, 0.84), transparent 32%, transparent 68%, rgba(251, 247, 239, 0.84)),
-    radial-gradient(circle at center, transparent, rgba(251, 247, 239, 0.58));
+    linear-gradient(90deg, rgba(11, 8, 6, 0.92), transparent 35%, transparent 65%, rgba(11, 8, 6, 0.92)),
+    radial-gradient(circle at center, transparent, rgba(9, 7, 6, 0.72));
 }
 
 .eyebrow {
@@ -187,6 +217,22 @@ a {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.hallow-mark {
+  width: clamp(4.5rem, 18vw, 7rem);
+  margin: 0 auto 1.4rem;
+  color: var(--champagne-soft);
+  filter: drop-shadow(0 0 18px rgba(240, 216, 154, 0.42));
+}
+
+.hallow-mark path,
+.hallow-mark circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 body[dir="rtl"] .eyebrow {
@@ -199,6 +245,10 @@ body[dir="rtl"] .eyebrow {
   font-size: clamp(4rem, 18vw, 9rem);
   font-weight: 400;
   line-height: 0.92;
+  color: #fff7df;
+  text-shadow:
+    0 0 28px rgba(240, 216, 154, 0.28),
+    0 12px 36px rgba(0, 0, 0, 0.55);
 }
 
 .couple-names span {
@@ -207,14 +257,14 @@ body[dir="rtl"] .eyebrow {
 
 .ampersand {
   margin: 0.3rem 0;
-  color: var(--champagne);
+  color: var(--champagne-soft);
   font-size: 0.42em;
   font-style: italic;
 }
 
 .hero-date {
   margin: 1.8rem 0 0;
-  color: var(--ink-soft);
+  color: #e3d4b7;
   font-size: clamp(1rem, 3vw, 1.25rem);
 }
 
@@ -231,7 +281,7 @@ body[dir="rtl"] .eyebrow {
   width: 28px;
   height: 44px;
   margin-left: -14px;
-  border: 1px solid rgba(35, 33, 31, 0.38);
+  border: 1px solid rgba(240, 216, 154, 0.48);
   border-radius: 999px;
 }
 
@@ -243,7 +293,7 @@ body[dir="rtl"] .eyebrow {
   height: 4px;
   margin-left: -2px;
   border-radius: 50%;
-  background: var(--champagne);
+  background: var(--champagne-soft);
   animation: scrollPulse 1.8s ease-in-out infinite;
 }
 
@@ -261,6 +311,9 @@ p {
 
 .invitation {
   text-align: center;
+  background:
+    radial-gradient(circle at top, rgba(202, 164, 93, 0.14), transparent 24rem),
+    linear-gradient(180deg, var(--ivory), #f8efd9);
 }
 
 .invitation-text {
@@ -270,10 +323,10 @@ p {
 }
 
 .ornament {
-  width: min(22rem, 72vw);
+  width: min(24rem, 72vw);
   height: 1px;
   margin: 0 auto 2.8rem;
-  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
+  background: linear-gradient(90deg, transparent, var(--champagne), var(--champagne-soft), var(--champagne), transparent);
 }
 
 .ornament::before {
@@ -283,15 +336,22 @@ p {
   height: 0.65rem;
   margin: -0.32rem auto 0;
   border: 1px solid var(--champagne);
-  background: var(--ivory);
+  background: var(--charcoal);
   transform: rotate(45deg);
+  box-shadow: 0 0 18px rgba(202, 164, 93, 0.45);
 }
 
 .countdown {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 250, 244, 0.86)),
-    linear-gradient(110deg, rgba(141, 154, 129, 0.16), transparent 45%, rgba(217, 182, 170, 0.16));
+    radial-gradient(circle at 18% 12%, rgba(202, 164, 93, 0.18), transparent 22rem),
+    linear-gradient(135deg, #16110d, #111923 48%, #1b1211);
+  color: #f7edd8;
   text-align: center;
+}
+
+.countdown h2,
+.countdown .eyebrow {
+  color: var(--champagne-soft);
 }
 
 .countdown-grid {
@@ -305,9 +365,10 @@ p {
   min-height: 7.5rem;
   display: grid;
   align-content: center;
-  border: 1px solid var(--line);
-  background: rgba(255, 252, 247, 0.62);
+  border: 1px solid rgba(240, 216, 154, 0.25);
+  background: rgba(247, 237, 216, 0.08);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
 }
 
 .countdown-item strong {
@@ -318,7 +379,7 @@ p {
 }
 
 .countdown-item span {
-  color: var(--ink-soft);
+  color: #d9c491;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -333,6 +394,12 @@ p {
 .details-layout {
   display: grid;
   gap: 2.2rem;
+}
+
+.details {
+  background:
+    linear-gradient(180deg, #f8efd9, #ecd9b5),
+    radial-gradient(circle at 80% 20%, rgba(122, 36, 51, 0.14), transparent 24rem);
 }
 
 .detail-list {
@@ -399,13 +466,14 @@ p {
 }
 
 .button.primary {
-  background: var(--charcoal);
-  border-color: var(--charcoal);
+  background: linear-gradient(135deg, #24170f, #3b1820);
+  border-color: #3b1820;
   color: #fffaf4;
+  box-shadow: 0 12px 36px rgba(59, 24, 32, 0.22);
 }
 
 .button.secondary {
-  background: transparent;
+  background: rgba(247, 237, 216, 0.18);
   color: var(--charcoal);
 }
 
@@ -415,16 +483,32 @@ p {
 
 .dress {
   background:
-    linear-gradient(180deg, rgba(251, 247, 239, 0.78), rgba(251, 247, 239, 0.92)),
+    radial-gradient(circle at 50% 20%, rgba(240, 216, 154, 0.2), transparent 24rem),
+    linear-gradient(180deg, rgba(18, 13, 10, 0.88), rgba(14, 18, 24, 0.92)),
     url("assets/images/floral-detail.svg");
   background-position: center;
   background-size: cover;
   text-align: center;
+  color: #f7edd8;
 }
 
 .dress p,
 .rsvp p {
   color: var(--ink-soft);
+}
+
+.dress p {
+  color: #dfcfaa;
+}
+
+.dress h2 {
+  color: #fff7df;
+}
+
+.rsvp {
+  background:
+    radial-gradient(circle at 15% 18%, rgba(31, 76, 60, 0.16), transparent 22rem),
+    linear-gradient(180deg, #f8efd9, #fff7e5);
 }
 
 .rsvp-button {
@@ -440,7 +524,8 @@ p {
 
 .footer {
   padding: 3rem 1.25rem 3.5rem;
-  color: var(--ink-soft);
+  color: #d9c491;
+  background: var(--charcoal);
   text-align: center;
 }
 
@@ -451,7 +536,7 @@ p {
 
 .footer strong {
   margin-top: 0.7rem;
-  color: var(--charcoal);
+  color: #fff7df;
   font-family: var(--serif);
   font-size: 1.5rem;
   font-weight: 400;
