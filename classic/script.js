@@ -17,7 +17,7 @@ const weddingConfig = {
   dressCode: "Formal / Elegant",
   showDressCode: true,
   enableMusic: true,
-  musicFile: "assets/music/FlyMe-start-90.mp3",
+  musicFile: "assets/music/OmarKhairat_LoveScene.mp3",
   musicStartAtSeconds: 0
 };
 
