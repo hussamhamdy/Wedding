@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+:root { --ivory:#f8f1e4; --warm:#eee3cf; --charcoal:#303a24; --ink-soft:#65644f; --champagne:#916a31; --champagne-soft:#c6a66c; --serif:'Cormorant Garamond',Georgia,serif; --arabic:'Amiri',Tahoma,serif; --line:#c6a66c55; }
+body { background-color:var(--ivory); background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.62' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23916a31' opacity='.055' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E"); }
+.topbar { inset:1.5rem 2rem auto; }
+.language-toggle,.music-toggle { border-color:#bca27166; color:#303a24; box-shadow:none; }
+.hero { min-height:100svh; padding:6rem 1.5rem 5rem; }
+.hero-media { background:none; transform:none; z-index:-1; }
+.hero-media::after { background:none; }
+.hero::before,.hero-media::before { content:''; position:absolute; background:url('assets/images/botanical-corner.png') top left / contain no-repeat; width:clamp(280px,39vw,650px); aspect-ratio:1; pointer-events:none; }
+.hero::before { top:-25px; left:-35px; z-index:2; }
+.hero-media::before { bottom:-25px; right:-35px; transform:rotate(180deg); }
+.hero::after { inset:22px; border:1px solid #b38b4d; outline:1px solid #c6a66c88; outline-offset:7px; z-index:-1; }
+.hero-inner { width:min(100%,48rem); padding:2.5rem 2rem; }
+.hero-inner::before { content:''; position:absolute; inset:-1.5rem 2rem -1rem; border:1px solid #b38b4d99; border-radius:48% 48% 0 0 / 32% 32% 0 0; z-index:-1; }
+.blessing { font-family:var(--arabic); font-size:1.75rem; color:var(--champagne); margin:0 0 1.25rem; }
+.eyebrow { font-size:.72rem; letter-spacing:.28em; font-weight:500; }
+.hero .eyebrow::after { content:'✧'; display:block; font-size:1.5rem; margin:.7rem 0 1rem; }
+.couple-names { font-size:clamp(5rem,10vw,9rem); line-height:.79; letter-spacing:-.045em; }
+.ampersand { margin:.45rem 0; font-size:.43em; letter-spacing:0; color:#b48b45; }
+.hero-date { font-size:.85rem; letter-spacing:.16em; text-transform:uppercase; margin-top:2.2rem; }
+.hero-copy { font-family:var(--serif); font-size:1.4rem; max-width:25rem; line-height:1.4; }
+.hero-venue { display:block; text-decoration:none; font:1.6rem var(--serif); margin:1.6rem auto 0; }
+.hero-venue span { display:block; font:.7rem 'Segoe UI',sans-serif; letter-spacing:.16em; margin-top:.65rem; }
+.scroll-indicator { height:30px; width:20px; margin-left:-10px; bottom:2.4rem; border-color:#916a3166; }
+.invitation { padding-block:7rem; }
+.invitation::after,.rsvp::after { content:''; position:absolute; width:320px; aspect-ratio:1; background:url('assets/images/botanical-corner.png') center/contain no-repeat; right:-140px; bottom:-100px; transform:rotate(180deg); opacity:.65; pointer-events:none; }
+.invitation-text { font-family:var(--serif); max-width:38rem; margin:1.7rem auto 0; }
+.countdown { background:#e9e6d8; border-block:1px solid var(--line); }
+.countdown-grid { max-width:46rem; margin:3rem auto 0; gap:0; }
+.countdown-item { border:0; border-inline-end:1px solid var(--line); background:transparent; box-shadow:none; }
+.countdown-item:last-child { border:0; }
+.countdown-item strong { font-size:clamp(3rem,8vw,5rem); }
+.countdown-item span { font-size:.65rem; margin-top:.7rem; }
+.details { padding-block:7rem; }
+.detail-block strong { font-size:2.5rem; }
+.button { border-radius:2px; font-size:.8rem; letter-spacing:.06em; }
+.dress { background:#e9e6d8; border-block:1px solid var(--line); }
+.footer { border-top:1px solid var(--line); }
+.footer strong span { display:inline; }
+body[dir='rtl'] .couple-names { font-weight:700; font-size:clamp(5rem,10vw,8rem); line-height:1.12; }
+body[dir='rtl'] .hero-date { letter-spacing:0; }
+body[dir='rtl'] .hero-copy { font-family:var(--arabic); }
+html[data-design='olive'] .hero { background:#263b2d; color:#f8eedb; }
+html[data-design='olive'] .hero::after { z-index:0; border-color:#c8ac75; }
+html[data-design='olive'] .hero-inner::before { border-radius:50% 50% 0 0; border-color:#c8ac7588; }
+html[data-design='olive'] .hero .eyebrow,html[data-design='olive'] .blessing,html[data-design='olive'] .hero-date { color:#dfc598; }
+html[data-design='olive'] .hero-media { z-index:0; }
+html[data-design='olive'] .hero::before { width:clamp(280px,37vw,600px); }
+html[data-design='olive'] .countdown,html[data-design='olive'] .dress { background:#dce2d3; }
+html[data-design='arabesque'] .hero-inner::before { inset:-.5rem 0; border-radius:50% 50% 3px 3px / 24% 24% 3px 3px; border-style:double; border-width:4px; }
+html[data-design='arabesque'] .hero { background:radial-gradient(ellipse at center,#fffaf0aa,transparent 65%); }
+html[data-design='arabesque'] .hero::before { width:clamp(260px,33vw,520px); }
+html[data-design='arabesque'] .hero-media::before { width:clamp(260px,33vw,520px); }
+html[data-design='arabesque'] .countdown,html[data-design='arabesque'] .dress { background:#efe1c7; }
+@media(min-width:1000px) { .hero-inner { padding-top:2rem; } .details-layout { max-width:58rem; gap:3rem 6rem; } }
+@media(max-width:600px) {
+ .topbar { inset:1rem 1.1rem auto; }
+ .hero { min-height:960px; min-height:max(880px,100svh); padding:8.5rem 1.5rem 6rem; }
+ .hero::before { width:250px; top:-20px; left:-65px; }
+ .hero-media::before { width:245px; right:-60px; bottom:-15px; }
+ .hero-inner { padding:2rem .5rem; }
+ .hero-inner::before { inset:-2rem -.1rem -1.5rem; }
+ .couple-names { font-size:clamp(4.6rem,19vw,7rem); }
+ .blessing { font-size:1.45rem; }
+ .hero-date { font-size:.72rem; letter-spacing:.07em; }
+ .hero-copy { font-size:1.25rem; width:90%; }
+ .hero-venue { font-size:1.5rem; }
+ .hero::after { inset:14px; outline-offset:5px; }
+ .countdown-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+ .countdown-item { min-height:6rem; }
+ .countdown-item span { font-size:.56rem; letter-spacing:.04em; }
+ body[dir='rtl'] .couple-names { font-size:5.5rem; }
+ html[data-design='arabesque'] .hero-inner::before { inset:-2rem -.1rem; }
+}

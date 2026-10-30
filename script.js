@@ -9,7 +9,7 @@ const weddingConfig = {
 
   venueName: "Family Park",
   venueAddress: "Family Park - Gate 3 - El-Rehab",
-  googleMapsUrl: "https://maps.app.goo.gl/wuj5d2P1hxW4KHtNA",
+  googleMapsUrl: "https://maps.app.goo.gl/U6MTif6dyTTokPHz6",
   publicUrl: "https://hussamhamdy.github.io/Wedding/",
 
   whatsappNumber: "201025825046",

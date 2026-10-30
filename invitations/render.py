@@ -7,7 +7,7 @@ import qrcode
 
 ROOT = Path(__file__).resolve().parent
 SIZE = (1080, 1920)
-MAPS_URL = "https://maps.app.goo.gl/wuj5d2P1hxW4KHtNA"
+MAPS_URL = "https://maps.app.goo.gl/U6MTif6dyTTokPHz6"
 FONT_DIR = Path("C:/Windows/Fonts")
 
 

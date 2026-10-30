@@ -9,7 +9,7 @@ const weddingConfig = {
 
   venueName: "Family Park",
   venueAddress: "Gate 3 - Borg-Land - El-Rehab",
-  googleMapsUrl: "https://maps.app.goo.gl/wuj5d2P1hxW4KHtNA",
+  googleMapsUrl: "https://maps.app.goo.gl/U6MTif6dyTTokPHz6",
   publicUrl: "https://hussamhamdy.github.io/Wedding/harry-potter/",
 
   whatsappNumber: "201025825046",
@@ -23,10 +23,10 @@ const weddingConfig = {
 
 const translations = {
   en: {
-    pageTitle: "{groomName} & {brideName} | Wedding Invitation",
+    pageTitle: "{groomName} & {brideName} | Katb El-Ketab Invitation",
     metaDescription:
-      "Together with their families, {groomName} and {brideName} invite you to celebrate their wedding.",
-    heroEyebrow: "A Magical Wedding Invitation",
+      "Together with their families, {groomName} and {brideName} invite you to celebrate their Katb El-Ketab.",
+    heroEyebrow: "A Magical Katb El-Ketab Invitation",
     heroCopy: "Together with our families, we invite you to an evening of vows, candlelight, and a little magic.",
     invitationEyebrow: "By love and a little magic",
     invitationTitle: "You are summoned with joy",
@@ -38,7 +38,7 @@ const translations = {
     hours: "Hours",
     minutes: "Minutes",
     seconds: "Seconds",
-    passedMessage: "Our wedding day has arrived. Thank you for celebrating with us.",
+    passedMessage: "Our Katb El-Ketab day has arrived. Thank you for celebrating with us.",
     detailsEyebrow: "Ceremony details",
     detailsTitle: "The gathering",
     dateLabel: "Date",
@@ -59,14 +59,14 @@ const translations = {
     musicOff: "Music",
     musicOn: "Playing",
     calendarDescription:
-      "Wedding celebration for {groomName} and {brideName}. We would be honored to celebrate with you.",
-    whatsappMessage: "Hi {groomName}, I'd be happy to attend the wedding.",
+      "Katb El-Ketab celebration for {groomName} and {brideName}. We would be honored to celebrate with you.",
+    whatsappMessage: "Hi {groomName}, I'd be happy to attend the Katb El-Ketab.",
     locale: "en-US"
   },
   ar: {
-    pageTitle: "دعوة زفاف {groomName} و {brideName}",
-    metaDescription: "يتشرف {groomName} و {brideName} بدعوتكم لحضور حفل زفافهما.",
-    heroEyebrow: "دعوة زفاف سحرية",
+    pageTitle: "دعوة كتب كتاب {groomName} و {brideName}",
+    metaDescription: "يتشرف {groomName} و {brideName} بدعوتكم لحضور حفل كتب كتابهما.",
+    heroEyebrow: "دعوة كتب كتاب سحرية",
     heroCopy: "مع عائلتينا، يسعدنا دعوتكم إلى ليلة من الحب والوعود ولمسة من السحر.",
     invitationEyebrow: "بكل الحب ولمسة سحر",
     invitationTitle: "يسعدنا حضوركم",
@@ -78,7 +78,7 @@ const translations = {
     hours: "ساعات",
     minutes: "دقائق",
     seconds: "ثواني",
-    passedMessage: "لقد وصل يوم زفافنا. شكرًا لمشاركتكم فرحتنا.",
+    passedMessage: "لقد وصل يوم كتب كتابنا. شكرًا لمشاركتكم فرحتنا.",
     detailsEyebrow: "تفاصيل الحفل",
     detailsTitle: "موعد اللقاء",
     dateLabel: "التاريخ",
@@ -97,8 +97,8 @@ const translations = {
     footerMessage: "ننتظر الاحتفال معكم بكل حب وسحر.",
     musicOff: "الموسيقى",
     musicOn: "تعمل الآن",
-    calendarDescription: "حفل زفاف {groomName} و {brideName}. يسعدنا حضوركم ومشاركتكم فرحتنا.",
-    whatsappMessage: "مرحبًا {groomName}، يسعدني حضور حفل الزفاف.",
+    calendarDescription: "حفل كتب كتاب {groomName} و {brideName}. يسعدنا حضوركم ومشاركتكم فرحتنا.",
+    whatsappMessage: "مرحبًا {groomName}، يسعدني حضور حفل كتب الكتاب.",
     locale: "ar-EG"
   }
 };
@@ -421,14 +421,14 @@ function setCountdownValue(unit, value) {
 function downloadCalendarInvite() {
   const start = new Date(weddingConfig.weddingDate);
   const end = new Date(weddingConfig.weddingEnd);
-  const title = `${weddingConfig.groomName} & ${weddingConfig.brideName} Wedding`;
+  const title = `${weddingConfig.groomName} & ${weddingConfig.brideName} Katb El-Ketab`;
   const description = interpolate(t("calendarDescription"));
   const location = `${weddingConfig.venueName}, ${weddingConfig.venueAddress}`;
 
   const ics = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Wedding Invitation//GitHub Pages//EN",
+    "PRODID:-//Katb El-Ketab Invitation//GitHub Pages//EN",
     "CALSCALE:GREGORIAN",
     `X-WR-TIMEZONE:${escapeIcs(weddingConfig.timeZone)}`,
     "BEGIN:VEVENT",
